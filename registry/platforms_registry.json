@@ -1,0 +1,25 @@
+{
+  "platforms": [
+    {
+      "id": "aspose",
+      "name": "Aspose Blog",
+      "url": "https://blog.aspose.com",
+      "rss_feed": "https://blog.aspose.com/index.xml",
+      "active": true
+    },
+    {
+      "id": "groupdocs",
+      "name": "GroupDocs Blog",
+      "url": "https://blog.groupdocs.com",
+      "rss_feed": "https://blog.groupdocs.com/index.xml",
+      "active": true
+    },
+    {
+      "id": "conholdate",
+      "name": "Conholdate Blog",
+      "url": "https://blog.conholdate.com",
+      "rss_feed": "https://blog.conholdate.com/index.xml",
+      "active": true
+    }
+  ]
+}

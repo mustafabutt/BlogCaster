@@ -1,0 +1,4 @@
+mcp
+feedparser
+httpx
+beautifulsoup4
