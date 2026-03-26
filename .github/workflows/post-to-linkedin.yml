@@ -1,0 +1,86 @@
+name: Post to LinkedIn
+
+on:
+  # Manual trigger with inputs
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode"
+        required: true
+        type: choice
+        options:
+          - auto
+          - manual
+        default: auto
+      platform:
+        description: "Platform ID (for auto mode)"
+        required: false
+        type: choice
+        options:
+          - aspose
+          - groupdocs
+          - conholdate
+        default: aspose
+      url:
+        description: "Blog post URL (for manual mode)"
+        required: false
+        type: string
+
+  # Scheduled: runs daily at 9:00 AM UTC
+  schedule:
+    - cron: "0 9 * * *"
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    # Allow the job to push the updated records file back to the repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install mcp feedparser httpx beautifulsoup4 aiofiles openai pydantic-settings
+
+      - name: Ensure records directory exists
+        run: mkdir -p content/records
+
+      - name: Run BlogCaster (Auto Mode)
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'auto' }}
+        env:
+          PROFESSIONALIZE_BASE_URL: ${{ secrets.PROFESSIONALIZE_BASE_URL }}
+          PROFESSIONALIZE_API_KEY_2: ${{ secrets.PROFESSIONALIZE_API_KEY_2 }}
+          PROFESSIONALIZE_LLM_MODEL: ${{ secrets.PROFESSIONALIZE_LLM_MODEL }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          PLATFORM="${{ inputs.platform || 'aspose' }}"
+          echo "Running Auto Mode for platform: $PLATFORM"
+          python -m agent_engine.social_agent.main --auto --platform "$PLATFORM"
+
+      - name: Run BlogCaster (Manual Mode)
+        if: ${{ inputs.mode == 'manual' && inputs.url != '' }}
+        env:
+          PROFESSIONALIZE_BASE_URL: ${{ secrets.PROFESSIONALIZE_BASE_URL }}
+          PROFESSIONALIZE_API_KEY_2: ${{ secrets.PROFESSIONALIZE_API_KEY_2 }}
+          PROFESSIONALIZE_LLM_MODEL: ${{ secrets.PROFESSIONALIZE_LLM_MODEL }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          echo "Running Manual Mode for URL: ${{ inputs.url }}"
+          python -m agent_engine.social_agent.main --url "${{ inputs.url }}"
+
+      - name: Commit updated records
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/records/published_record.json
+          git diff --cached --quiet || git commit -m "Update published records [skip ci]"
+          git push
