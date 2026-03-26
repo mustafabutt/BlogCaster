@@ -27,7 +27,7 @@ logger.setLevel(logging.WARNING)
 mcp = FastMCP("rss-fetcher")
 
 HTTP_TIMEOUT = 30.0
-USER_AGENT = "SocialMediaAgent/1.0 (RSS Fetcher)"
+USER_AGENT = "Mozilla/5.0 (compatible; BlogCaster/1.0; +https://github.com/mustafabutt/BlogCaster)"
 
 
 def strip_html(html: str) -> str:
