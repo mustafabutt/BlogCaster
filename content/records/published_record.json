@@ -1,0 +1,100 @@
+{
+  "records": [
+    {
+      "blog_url": "https://blog.aspose.com/note/convert-onenote-excel-java",
+      "title": "Convert OneNote .one File to an Excel File in Java",
+      "platform_id": "aspose",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7439437595735961600",
+          "shared_at": "2026-03-17 03:29:01"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.aspose.com/note/convert-onenote-xlsx-java",
+      "title": "Convert OneNote .one Notebook to XLSX or XLS Worksheet in Java",
+      "platform_id": "aspose",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7439437757216882688",
+          "shared_at": "2026-03-17 03:29:39"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.groupdocs.com/comparison/compare-word-documents",
+      "title": "Compare Word Documents in .NET: Revision\u2011Track vs Highlight Modes",
+      "platform_id": "groupdocs",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7439437862250405888",
+          "shared_at": "2026-03-17 03:30:04"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.aspose.com/finance/convert-xbrl-to-html-in-python",
+      "title": "Convert XBRL to HTML in Python",
+      "platform_id": "aspose",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7439487036958466049",
+          "shared_at": "2026-03-17 06:45:28"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.aspose.cloud/slides/extract-text-from-pptx-in-csharp",
+      "title": "Extract Text from PowerPoint Files in C# .NET using REST API",
+      "platform_id": "unknown",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7442478862933889024",
+          "shared_at": "2026-03-25 12:53:55"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.aspose.com/3d/convert-3mf-to-stl-in-python",
+      "title": "Convert 3MF to STL in Python: Complete Step-by-Step Guide",
+      "platform_id": "aspose",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7442661725524353024",
+          "shared_at": "2026-03-26 01:00:33"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.aspose.com/3d/convert-3d-scene-to-html-in-java",
+      "title": "Convert 3D Scene to HTML in Java",
+      "platform_id": "aspose",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7442682368978530304",
+          "shared_at": "2026-03-26 02:22:35"
+        }
+      }
+    },
+    {
+      "blog_url": "https://blog.aspose.com/html/convert-html-tables-to-pdf-in-python",
+      "title": "Convert HTML Tables to PDF in Python",
+      "platform_id": "aspose",
+      "shared_on": {
+        "linkedin": {
+          "status": "success",
+          "post_id": "urn:li:share:7442682555805474817",
+          "shared_at": "2026-03-26 02:23:20"
+        }
+      }
+    }
+  ]
+}
